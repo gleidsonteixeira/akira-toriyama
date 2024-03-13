@@ -1,0 +1,239 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+}
+
+h1 ,h2{
+  font-family: "Montserrat", sans-serif;
+}
+
+#topo{
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  padding-right: 200px;
+  & h1{
+    height: 100vh;
+    text-align: center;
+    line-height: 115px;
+    font-size: 150px;
+    font-weight: 900;
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+    color: #3BB90050;
+    position: absolute;
+    top: 0;
+    left: 0;
+    & span{
+      font-size: 50px;
+      position: absolute;
+      top: 50px;
+      left: 85px;
+      color: #2C2C2C;
+    }
+    & strong{
+      position: absolute;
+      top: 50%;
+      left: 6px;
+      transform: translateY(-50%);
+      font-size: 16px;
+      font-weight: bolder;
+      color: #2C2C2C;
+      writing-mode: horizontal-tb;
+      & b{
+        font-weight: bolder;
+        color: #FFFFFF;
+      }
+    }
+  }
+  & img{
+    height: 100%;
+  }
+}
+
+#noticia{
+  display: flex;
+  justify-content: flex-end;
+  & .container{
+    width: 50%;
+    height: 40vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 80px;
+    background-color: #2C2C2C;
+    position: relative;
+    &::after{
+      content: "";
+      border-right: 50vw solid #2C2C2C;
+      border-bottom: 40vw solid transparent;
+      position: absolute;
+      top: 0;
+      right: 100%;
+    }
+  }
+  & h2{
+    font-size: 38px;
+    color: #b2ed96;
+    margin-bottom: 26px;
+  }
+  & p{
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+#historia{
+  & .container{
+    padding: 80px;
+    padding-right: 0;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    &:last-child{
+      padding-right: 80px;
+    }
+    & .texto{
+      width: 45%;
+      & h2{
+        color: #b2ed96;
+        font-size: 38px;
+        margin-bottom: 26px;
+      }
+      & p{
+        line-height: 24px;
+        font-size: 14px;
+        &:not(:last-of-type){
+          margin-bottom: 26px;  
+        }
+      }
+    }
+    & .imagem{
+      width: 50%;
+      position: sticky;
+      top: 26px;
+      & img{
+        width: 100%;
+        display: block;
+        &.goku{
+          width: 60%;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
+#obras{
+  padding: 80px;
+  & h2{
+    color: #b2ed96;
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 26px;
+  }
+  & ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  & ul li{
+    width: calc(50% - 8px);
+    padding: 26px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px #00000015;
+    color: #2C2C2C;
+    & b{
+      color: #b2ed96;
+      display: block;
+    }
+  }
+}
+
+footer{
+  display: flex;
+  justify-content: flex-end;
+  padding: 80px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #666;
+}
+
+@media only screen and ( max-width: 600px ) {
+  #topo{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    & h1{
+      writing-mode: horizontal-tb;
+      position: initial;
+      top: initial;
+      left: initial;
+      font-size: 100px;
+      & span{
+        font-size: 40px;
+      }
+      & strong{
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    & img{
+      width: 100%;
+      height: auto;
+    }
+  }
+  #noticia{
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 100px;
+    & .container{
+      width: 100%;
+      height: auto;
+      padding: 26px;
+      &::after{
+        border-bottom-width: 100px;
+        border-right-width: 100vw;
+        top: calc(100% - 1px);
+        right: 0;
+      }
+    }
+  }
+  #historia{
+    & .container{
+      padding: 0;
+      flex-direction: column;
+      &:first-of-type{
+        flex-direction: column-reverse;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
+      & .texto{
+        width: 100%;
+        padding: 26px;
+      }
+      & .imagem{
+        width: 100%;
+        background-color: #FFFFFF;
+        padding-top: 26px;
+        top: 0;
+      }
+    }
+  }
+  #obras{
+    padding: 26px;
+    & ul li{
+      width: 100%;
+    }
+  }
+}
